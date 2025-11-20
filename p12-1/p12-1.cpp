@@ -49,8 +49,8 @@ bool readFromFile(string filename) {
 		charCount += countChars(thisLine);
 	}
 
-	cout << "Words:		" << wordCount << "\n";
-	cout << "Characters:	" << charCount << "\n";
+	cout << "    Words: " << wordCount << "\n";
+	cout << "Characters:" << charCount << "\n";
 
 	inFile.close();
 	return true;
@@ -58,13 +58,13 @@ bool readFromFile(string filename) {
 
 int countWords(string thisLine) {
 	int count = 0;
+	int length = thisLine.length();
 
-	for (int i = 0; i < thisLine.length(); i++) {
+	for (int i = 0; i < length - 1; i++) {
 		if ((thisLine[i] == ' ' && !isspace(thisLine[i + 1])) || i == 0) {
 			count++;
 		}
 	}
-	cout << count << endl;
 	return count;
 }
 
